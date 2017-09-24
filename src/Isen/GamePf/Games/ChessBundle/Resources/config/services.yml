@@ -1,0 +1,5 @@
+services:
+    isen_game_pf_core.game_chess:
+        class: Isen\GamePf\Games\ChessBundle\Service\ChessGameService
+        tags:
+            -  { name: isen_game_pf_core.game }

@@ -1,0 +1,6 @@
+services:
+    isen_game_pf_core.game_go:
+        class: Isen\GamePf\Games\GoBundle\Service\GoGameService
+        arguments: [ '@router' ]
+        tags:
+            -  { name: isen_game_pf_core.game }

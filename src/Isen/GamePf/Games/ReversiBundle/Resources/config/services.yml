@@ -1,0 +1,5 @@
+services:
+    isen_game_pf_core.game_reversi:
+        class: Isen\GamePf\Games\ReversiBundle\Service\ReversiGameService
+        tags:
+            -  { name: isen_game_pf_core.game }

@@ -1,0 +1,18 @@
+isen_game_pf_games_reversi:
+    resource: "@IsenGamePfGamesReversiBundle/Controller/"
+    type:     annotation
+    prefix:   /g_reversi
+
+isen_game_pf_game_chess:
+    resource: "@IsenGamePfGamesChessBundle/Controller/"
+    type:     annotation
+    prefix:   /g_chess
+isen_game_pf_game_go:
+    resource: "@IsenGamePfGamesGoBundle/Controller/"
+    type:     annotation
+    prefix:   /g_go
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

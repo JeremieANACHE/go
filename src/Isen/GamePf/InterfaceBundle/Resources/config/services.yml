@@ -1,0 +1,4 @@
+services:
+#    isen_game_pf_interface.example:
+#        class: Isen\GamePf\InterfaceBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

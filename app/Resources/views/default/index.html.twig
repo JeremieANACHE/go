@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<h1>Liste des jeux</h1>
+
+<ul>
+{% for game in games %}
+	<li>
+		{{ game.name }}
+		<ul>
+			{% for mode in game.modes %}
+				<li>
+					<a href="{{ path('wait', {'gameName': game.name, 'modeId': mode.id}) }}">{{ mode.name }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+{% block title %}GO{% endblock %}
+{% block body %}
+    {{ url('goValidate', {'uniqueUrl': game.uniqueUrl}) }}<br>
+    <canvas id="board" width="700" height="700">
+    </canvas>
+    <a href="#" id="pass">Passer</a>
+    <p id="infos"></p>
+    <p id="winner"></p>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/isengamepfgamesgo/js/jquery-2.2.2.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/isengamepfgamesgo/js/go.js') }}"></script>
+    <script>
+        var go = new Go("{{ url('goFetch', {'uniqueUrl': game.uniqueUrl}) }}", "{{ url('goValidate', {'uniqueUrl': game.uniqueUrl}) }}", "{{ url('goPass', {'uniqueUrl': game.uniqueUrl}) }}", {{ game.rows }});
+        go.updateBoard();
+    </script>
+{% endblock %}
+

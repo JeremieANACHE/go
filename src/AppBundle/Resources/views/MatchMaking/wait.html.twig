@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:MatchMaking:wait{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the MatchMaking:wait page</h1>
+    <p id="wait">En attente d'un adversaire...</p>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-2.2.2.js') }}"></script>
+    <script>
+        function checkOpponent(){
+            $.ajax({
+                url: "/redirect"
+            }).done(function (data){
+                window.location.replace(data.url);
+            }).fail(function(jqxhr){
+                if (jqxhr.status == 400){
+                    $("#wait").html(jqxhr.responseJSON.message);
+                }
+            });
+        }
+        //checkOpponent();
+        setInterval(checkOpponent, 5000);
+    </script>
+{% endblock %}

@@ -1,0 +1,3 @@
+services:
+    isen_game_pf_core.game:
+        class: Isen\GamePf\CoreBundle\Service\GameService
